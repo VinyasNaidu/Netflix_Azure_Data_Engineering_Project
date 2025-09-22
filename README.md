@@ -1,7 +1,7 @@
 # 🎬 Azure End-to-End Data Engineering Project: **Netflix Data Lakehouse** (Azure + Databricks + Unity Catalog + DLT)
 
 > Modern, parameterized, Medallion-architecture data platform on Azure using Netflix shows/movies data.  
-> 📺 **Demo Video:** https://www.youtube.com/watch?v=uc-u_juRg-w
+
 
 ---
 
