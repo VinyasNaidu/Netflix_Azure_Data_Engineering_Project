@@ -29,26 +29,5 @@
 ---
 
 ## 🗺️ Architecture Overview
+<img width="1029" height="502" alt="Screenshot 2025-09-22 at 1 01 30 AM" src="https://github.com/user-attachments/assets/7c32d69d-ef47-4547-bb76-5a7a7fa495e1" />
 
-```mermaid
-flowchart TD
-    subgraph Sources
-      G1[GitHub CSVs<br/>(countries/categories/cast/directors)]
-      G2[ADLS Raw<br/>(Netflix titles.csv)]
-    end
-
-    subgraph Ingestion
-      ADF[Azure Data Factory<br/>Dynamic HTTP + ADLS Pipelines]
-      AL[Databricks Auto Loader<br/>Incremental Bronze]
-    end
-
-    subgraph Lakehouse
-      B[Bronze Delta]
-      S[Silver Delta<br/>Parameterized Notebooks + Workflows]
-      DLT[Delta Live Tables<br/>Gold + Expectations]
-    end
-
-    BI[Power BI via Databricks SQL Warehouse]
-
-    G1 --> ADF --> B
-    G2 --> AL --> B --> S --> DLT --> BI
